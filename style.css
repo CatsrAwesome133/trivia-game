@@ -1,0 +1,31 @@
+:root {
+    --bg:            #605540;
+    --fg:            #fff5e0;
+    --color1:        #ff0000;
+    --color2:        #ff0000;
+    --color3:        #ff0000;
+    --mid-light:     #ff0000;
+    --mid-dark:      #ff0000;
+}
+
+
+body {
+    color: var(--bg);
+    background-color: var(--fg);
+
+}
+
+
+h1 {
+    font-family: "Times New Roman", times, serif;
+    border: double 5px;
+    border-color: var(--bg);
+    border-left: solid 5px;
+    border-right: double 5px var(--fg);
+    padding: 5px;
+}
+
+
+form div {
+    margin: 10px;
+}
