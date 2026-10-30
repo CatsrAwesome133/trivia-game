@@ -25,7 +25,71 @@ h1 {
     padding: 5px;
 }
 
+h2 {
+    font-family: "Times New Roman", times, serif;
+    border: double 5px;
+    border-color: var(--bg);
+    border-left: solid 5px;
+    border-bottom: double 5px var(--fg);
+    padding: 5px;
+    margin: 10px;
+}
+
+button {
+    color: var(--bg);
+    background-color: var(--fg);
+    border: double 5px var(--bg);
+    border-left: solid 5px;
+    padding: 5px;
+    width: 20vw;
+}
+
 
 form div {
     margin: 10px;
+}
+
+#container-q {
+    border: double 5px var(--bg);
+    border-left: solid 5px;
+    padding: 10px;
+    min-height: 30vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#container-ans {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin-top: 10px;
+}
+
+#container-ans div {
+    border: double 5px var(--fg);
+    color: var(--fg);
+    background-color: var(--bg);
+    padding: 10px;
+    text-align: center;
+    line-height: 100px; /* Keep line height equal to height */
+    width: calc(50vw - 52px);
+    height: 100px;
+}
+
+.bar-bottom {
+    margin-top: 10px;
+    border: double 5px var(--bg);
+    border-left: solid 5px;
+    border-top: double 5px var(--fg);
+    height: 5px;
+}
+
+.skinny {
+    margin-left: 10px;
+    margin-right: 10px;
 }
