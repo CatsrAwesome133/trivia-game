@@ -1,8 +1,8 @@
 # To Do
 ## Features
-- score system
+- ~~score system~~
 - add question numbers
-    - try to load all questions at once
+    - ~~try to load all questions at once~~
 - add question type filters
 - randomize answer location
 
