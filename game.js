@@ -54,7 +54,7 @@ function newQuestion() {
 
     // Load the question
     const q = document.createElement('div');
-    q.textContent = currentQuestion.question;
+    q.innerHTML = currentQuestion.question;
     
 
     var options = [];
@@ -63,7 +63,7 @@ function newQuestion() {
     const ans = document.createElement('div');
     ans.setAttribute("id", "correct");
     ans.setAttribute("onclick", "correctAns()");
-    ans.textContent = currentQuestion.correct_answer;
+    ans.innerHTML = currentQuestion.correct_answer;
     options.push(ans);
 
     // Load the incorrect answers

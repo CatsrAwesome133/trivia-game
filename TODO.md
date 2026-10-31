@@ -6,7 +6,7 @@
 - add question type filters
 - ~~randomize answer location~~
 - show correct answer (setting)
-- display unicode properly
+- ~~display unicode properly~~
 
 ## Styling
 - animations *WIP*
