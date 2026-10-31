@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Trivia Generator (Demo)</title>
-    <script src="script.js"></script>
     <link rel="icon" type="image/x-icon" href="">
     <link rel="stylesheet" type="text/css" href="style.css" media="all">
     <style>
@@ -22,22 +21,32 @@
           <i>Trivia!</i>
         </h1>
         <p>
-            Request questions one at a time
+            Welcome! The questions from this game come from <a href="https://opentdb.com/">Open Trivia DB</a>
         </p>
-        <form method="get" action="play.html">
-            Questions: <input type="text" name="q-no">
-            <div>
-                <button id="start" type="submit">Start</button>
-                <button type="reset">Reset</button>
-            </div>
-        </form>
-        <p id="test">test</p>
-        <div id="tutorial">
+        <div class="text-block" id="settings">
+            <h2>Settings:</h2>
+            <form id="settings-form" method="get" action="play.html">
+                <p>Questions: <input id="q-no" type="number" name="qNo"></p>
+                <p>Allow negative scores: <input type="checkbox" name="goNegative"></p>
+                <div>
+                    <button id="start" type="submit">Start</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+            <div class="bar-bottom"></div>
+        </div>
+        <p></p>
+        <div class="text-block" id="tutorial">
             <h2>How to play:</h2>
+            <p>Go through the settings and pick what you want. Note that:</p>
+            <ul>
+                <li>Leaving questions blank makes the game loop forever</li>
+            </ul>
+
             <p>Click start, then try to pick the correct answer!</p>
             <p>Incorrect answers will lose you 1 point, while correct answers gain you 2.</p>
+            <div class="bar-bottom"></div>
         </div>
     </div>
-    <div class="bar-bottom"></div>
 </body>
 </html>

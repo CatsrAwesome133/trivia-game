@@ -1,7 +1,6 @@
-const trivia_api = 'https://opentdb.com/api.php?amount=5';
-
 var score = 0;
 var currentIndex = 0;
+var correctAnswers = 0;
 
 
 async function loadQuestions() {
@@ -73,7 +72,8 @@ function newQuestion() {
 function correctAns() {
     const score_element = document.getElementById('score');
     score = score + 2;
-    score_element.innerHTML = score.toString();
+    correctAnswers++;
+    score_element.innerHTML = score.toString(); 
     choseAnswer();
 }
 
@@ -81,26 +81,45 @@ function correctAns() {
 function wrongAns() {    
     const score_element = document.getElementById('score');
     score = score - 1;
+    if (!negativeScore) {
+        if (score < 0) {
+            score = 0
+        }
+    }
+
     score_element.innerHTML = score.toString();
     choseAnswer();
 }
 
 // For every answer chosen
 function choseAnswer() {
-    currentIndex = currentIndex + 1;
+    currentIndex++;
     newQuestion();
 }
 
 
 // End screen
 function showEndScreen() {
-    const screen = document.getElementById('container-end');
-    const main = document.getElementById('container-main');
-
-    main.setAttribute("style", "display: none");
-    screen.setAttribute("style", "");
+    document.getElementById('container-main').setAttribute("style", "display: none");
+    document.getElementById('container-end').setAttribute("style", "");
+    
+    document.getElementById('total-correct').innerHTML = String(parseInt(correctAnswers, 10));
+    document.getElementById('total').innerHTML = currentIndex.toString();
+    document.getElementById('percent').innerHTML = String(Math.round((correctAnswers/currentIndex)*100));
+    document.getElementById('score-end').innerHTML = score.toString();
 }
 
 
-// Load a new question when the page loads
-loadQuestions();
+// Fetching data from settings
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    questionNo = urlParams.get('qNo'); 
+    negativeScore = urlParams.get('goNegative');
+  
+    console.log("Number of questions: ", questionNo);
+    console.log("Negative scores: ", negativeScore);
+
+    trivia_api = `https://opentdb.com/api.php?amount=${Number.parseInt(questionNo)}`;
+
+    loadQuestions();
+});

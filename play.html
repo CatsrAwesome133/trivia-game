@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Trivia Generator (Demo)</title>
-    <script src="script.js"></script>
+    <script src="game.js"></script>
     <link rel="icon" type="image/x-icon" href="">
     <link rel="stylesheet" type="text/css" href="style.css" media="all">
 </head>
@@ -29,7 +29,15 @@
         <div class="bar-bottom skinny"></div>
     </div>
     <div id="container-end" style="display: none">
-        container-end
+        <div id="congrats">
+            <h1>Congradulations!</h1>
+            <p>You've finished the game.</p>
+            <h2>You got <span id="total-correct">0</span>/<span id="total">0</span> questions correct, with a score of <span id="score-end">0</span>!</h2>
+            <p>That's <span id="percent">0</span>% :D</p>
+        </div>
+        <div>
+            <a href="index.html">Back to home</a>
+        </div>
     </div>
 </body>
 </html>
