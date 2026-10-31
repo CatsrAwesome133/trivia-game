@@ -4,7 +4,9 @@
 - ~~add question numbers~~
     - ~~try to load all questions at once~~
 - add question type filters
-- randomize answer location
+- ~~randomize answer location~~
+- show correct answer (setting)
+- display unicode properly
 
 ## Styling
 - animations *WIP*

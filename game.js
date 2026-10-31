@@ -3,6 +3,16 @@ var currentIndex = 0;
 var correctAnswers = 0;
 
 
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+
 async function loadQuestions() {
     // Request and parse JSON
     try {
@@ -46,25 +56,36 @@ function newQuestion() {
     const q = document.createElement('div');
     q.textContent = currentQuestion.question;
     
+
+    var options = [];
+
     // Load the correct answer
     const ans = document.createElement('div');
     ans.setAttribute("id", "correct");
     ans.setAttribute("onclick", "correctAns()");
     ans.textContent = currentQuestion.correct_answer;
+    options.push(ans);
 
     // Load the incorrect answers
     currentQuestion.incorrect_answers.forEach(wrongAnswer => {
         const wrong = document.createElement('div');
         wrong.setAttribute("onclick", "wrongAns()");
         wrong.innerHTML = wrongAnswer;
-        answerContainer.appendChild(wrong);
+        options.push(wrong);
     });
 
-    // Place all elements onto the page
+    // Shuffle options
+    options = shuffle(options);
+
+    // Place answers on page
+    options.forEach(answer => {
+        answerContainer.appendChild(answer);
+    });
+
+    // Place other elements onto the page
     questionContainer.innerHTML = '';
     questionContainer.setAttribute("style", "");
     questionContainer.appendChild(q);
-    answerContainer.appendChild(ans);
 }
 
 
