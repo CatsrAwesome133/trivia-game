@@ -1,4 +1,4 @@
-const trivia_api = 'https://opentdb.com/api.php?amount=10';
+const trivia_api = 'https://opentdb.com/api.php?amount=5';
 
 var score = 0;
 var currentIndex = 0;
@@ -90,6 +90,17 @@ function choseAnswer() {
     currentIndex = currentIndex + 1;
     newQuestion();
 }
+
+
+// End screen
+function showEndScreen() {
+    const screen = document.getElementById('container-end');
+    const main = document.getElementById('container-main');
+
+    main.setAttribute("style", "display: none");
+    screen.setAttribute("style", "");
+}
+
 
 // Load a new question when the page loads
 loadQuestions();

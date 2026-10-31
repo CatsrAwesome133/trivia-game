@@ -10,3 +10,4 @@
 - animations
 - hover styling
 - make the buttons nicer idk
+- resize play menu properly for screens
