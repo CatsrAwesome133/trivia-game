@@ -136,9 +136,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     questionNo = urlParams.get('qNo'); 
     negativeScore = urlParams.get('goNegative');
+    showCorrect = urlParams.get('showCorrect');
   
     console.log("Number of questions: ", questionNo);
     console.log("Negative scores: ", negativeScore);
+    console.log("Show correct answer: ", showCorrect);
 
     trivia_api = `https://opentdb.com/api.php?amount=${Number.parseInt(questionNo)}`;
 

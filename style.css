@@ -60,6 +60,43 @@ ul {
     list-style-type: "→   ";
 }
 
+input {
+    font-family: inherit;
+    background-color: var(--mid-dark);
+    color: var(--fg);
+    accent-color: var(--bg);
+    appearance: none;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border: 1.5px solid var(--bg);
+  /* Adjusts the position of the checkboxes on the text baseline */
+  vertical-align: -5.5px;
+  /* Set here so that Windows' High-Contrast Mode can override */
+  color: var(--fg);
+}
+
+input[type="checkbox"]::before {
+  content: "x";
+  position: absolute;
+  font-size: 1em;
+  right: 0.18em;
+  top: -0.26em;
+  visibility: hidden;
+}
+input[type="checkbox"]:checked::before {
+  /* Use `visibility` instead of `display` to avoid recalculating layout */
+  visibility: visible;
+}
+input[type="checkbox"]:disabled {
+  border-color: black;
+  background: #dddddd;
+  color: gray;
+}
+
 
 
 #settings-form div {
