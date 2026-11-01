@@ -20,3 +20,4 @@
 - make settings look better i beg
 - ~~style dropdown~~
 - detect and use dark mode
+- fix mobile formatting 
