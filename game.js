@@ -133,7 +133,13 @@ function wrongAns(element) {
 
 // For every answer chosen
 function choseAnswer() {
+    const options = document.getElementById('container-ans').querySelectorAll("*");
     document.getElementById('next').setAttribute("style", "");
+
+    options.forEach(i => {
+        i.setAttribute("onclick", "")
+    })
+
     waiting = true;
 }
 
