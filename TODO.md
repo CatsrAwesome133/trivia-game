@@ -5,7 +5,7 @@
     - ~~try to load all questions at once~~
 - add question type filters
 - ~~randomize answer location~~
-- show correct answer (setting)
+- ~~show correct answer (setting)~~
 - ~~display unicode properly~~
 
 ## Styling

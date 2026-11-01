@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Trivia Generator (Demo)</title>
+    <script src="index.js"></script>
     <link rel="icon" type="image/x-icon" href="">
     <link rel="stylesheet" type="text/css" href="style.css" media="all">
     <style>
@@ -29,6 +30,9 @@
                 <p>Questions: <input id="q-no" type="number" name="qNo"></p>
                 <p>Allow negative scores: <input type="checkbox" name="goNegative"></p>
                 <p>Show correct answer for every question: <input type="checkbox" name="showCorrect"></p>
+                <select id="category" name="category">
+                    <option value="">All Categories</option>
+                </select>
                 <div>
                     <button id="start" type="submit">Start</button>
                     <button type="reset">Reset</button>

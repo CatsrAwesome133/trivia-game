@@ -77,7 +77,7 @@ function newQuestion() {
     ans.setAttribute("onclick", "correctAns()");
     ans.innerHTML = currentQuestion.correct_answer;
     options.push(ans);
-
+ 
     // Load the incorrect answers
     currentQuestion.incorrect_answers.forEach(wrongAnswer => {
         const wrong = document.createElement('div');
@@ -123,8 +123,10 @@ function wrongAns(element) {
         }
     }
 
-    const ans = document.getElementById('correct');
-    ans.setAttribute("style", "background-color: var(--color2);");
+    if (showCorrect) {
+        const ans = document.getElementById('correct');
+        ans.setAttribute("style", "background-color: var(--color2);");
+    }
     
     element.setAttribute("style", "background-color: var(--color1);");
     score_element.innerHTML = score.toString();
