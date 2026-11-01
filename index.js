@@ -18,7 +18,7 @@ async function loadCategories() {
         categories.forEach(c => {
             const newOpt = document.createElement('option');
             newOpt.innerHTML = c.name;
-            newOpt.setAttribute("value", c.name);
+            newOpt.setAttribute("value", c.id);
             selector.appendChild(newOpt);
         });
 

@@ -174,12 +174,14 @@ document.addEventListener("DOMContentLoaded", () => {
     questionNo = urlParams.get('qNo'); 
     negativeScore = urlParams.get('goNegative');
     showCorrect = urlParams.get('showCorrect');
+    category = urlParams.get('category');
   
     console.log("Number of questions: ", questionNo);
     console.log("Negative scores: ", negativeScore);
     console.log("Show correct answer: ", showCorrect);
+    console.log("Question category: ", category);
 
-    trivia_api = `https://opentdb.com/api.php?amount=${Number.parseInt(questionNo)}`;
+    trivia_api = `https://opentdb.com/api.php?amount=${Number.parseInt(questionNo)}&category=${Number.parseInt(category)}`;
 
     loadQuestions();
 });

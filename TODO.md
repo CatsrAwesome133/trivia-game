@@ -4,6 +4,9 @@
 - ~~add question numbers~~
     - ~~try to load all questions at once~~
 - add question type filters
+    - ~~category~~
+    - difficulty
+    - choice/true or false
 - ~~randomize answer location~~
 - ~~show correct answer (setting)~~
 - ~~display unicode properly~~
@@ -15,4 +18,5 @@
 - ~~resize play menu properly for screens~~
 - nicer ending screen
 - make settings look better i beg
+- style dropdown
 - detect and use dark mode
