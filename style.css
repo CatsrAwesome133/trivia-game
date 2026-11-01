@@ -164,6 +164,12 @@ input[type="checkbox"]:disabled {
 #next {
     background-color: var(--bg);
     color: var(--fg);
+    border: double 5px;
+    position: absolute;
+    bottom: calc(25% - 15px);
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 

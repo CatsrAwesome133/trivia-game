@@ -12,7 +12,7 @@
 - animations *WIP*
 - hover styling *WIP*
 - make the buttons nicer idk *WIP*
-- resize play menu properly for screens
+- ~~resize play menu properly for screens~~
 - nicer ending screen
 - make settings look better i beg
 - detect and use dark mode
