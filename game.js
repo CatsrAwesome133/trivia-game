@@ -133,7 +133,6 @@ function wrongAns(element) {
 
 // For every answer chosen
 function choseAnswer() {
-    document.getElementById('container-ans').setAttribute("style", "display: none");
     document.getElementById('next').setAttribute("style", "");
     waiting = true;
 }
@@ -142,7 +141,6 @@ function choseAnswer() {
 function displayAns() {
     if (waiting == true) {
         document.getElementById('next').setAttribute("style", "display: none");
-        document.getElementById('container-ans').setAttribute("style", "");
         currentIndex++;
         waiting = false;
         newQuestion();
