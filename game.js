@@ -1,6 +1,7 @@
 var score = 0;
 var currentIndex = 0;
 var correctAnswers = 0;
+var waiting = false;
 
 
 function shuffle(array) {
@@ -10,6 +11,17 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+}
+
+function waitForPageClick() {
+  return new Promise((resolve) => {
+    function onClick(event) {
+      // Clean up the event listener immediately so it only fires once
+      document.removeEventListener('click', onClick);
+      resolve(event); // Resumes the async function
+    }
+    document.addEventListener('click', onClick);
+  });
 }
 
 
@@ -69,7 +81,7 @@ function newQuestion() {
     // Load the incorrect answers
     currentQuestion.incorrect_answers.forEach(wrongAnswer => {
         const wrong = document.createElement('div');
-        wrong.setAttribute("onclick", "wrongAns()");
+        wrong.setAttribute("onclick", "wrongAns(this)");
         wrong.innerHTML = wrongAnswer;
         options.push(wrong);
     });
@@ -94,12 +106,15 @@ function correctAns() {
     const score_element = document.getElementById('score');
     score = score + 2;
     correctAnswers++;
-    score_element.innerHTML = score.toString(); 
+    score_element.innerHTML = score.toString();
+    
+    const ans = document.getElementById('correct');
+    ans.setAttribute("style", "background-color: var(--color2);");
     choseAnswer();
 }
 
 // For incorrect answers
-function wrongAns() {    
+function wrongAns(element) {    
     const score_element = document.getElementById('score');
     score = score - 1;
     if (!negativeScore) {
@@ -108,14 +123,30 @@ function wrongAns() {
         }
     }
 
+    const ans = document.getElementById('correct');
+    ans.setAttribute("style", "background-color: var(--color2);");
+    
+    element.setAttribute("style", "background-color: var(--color1);");
     score_element.innerHTML = score.toString();
     choseAnswer();
 }
 
 // For every answer chosen
 function choseAnswer() {
-    currentIndex++;
-    newQuestion();
+    document.getElementById('container-ans').setAttribute("style", "display: none");
+    document.getElementById('next').setAttribute("style", "");
+    waiting = true;
+}
+
+// Displaying correct answer
+function displayAns() {
+    if (waiting == true) {
+        document.getElementById('next').setAttribute("style", "display: none");
+        document.getElementById('container-ans').setAttribute("style", "");
+        currentIndex++;
+        waiting = false;
+        newQuestion();
+    }
 }
 
 
