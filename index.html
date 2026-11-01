@@ -30,9 +30,12 @@
                 <p>Questions: <input id="q-no" type="number" name="qNo"></p>
                 <p>Allow negative scores: <input type="checkbox" name="goNegative"></p>
                 <p>Show correct answer for every question: <input type="checkbox" name="showCorrect"></p>
-                <select id="category" name="category">
-                    <option value="">All Categories</option>
-                </select>
+                <div>
+                    Category: 
+                    <select id="category" name="category">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
                 <div>
                     <button id="start" type="submit">Start</button>
                     <button type="reset">Reset</button>
@@ -43,9 +46,11 @@
         <p></p>
         <div class="text-block" id="tutorial">
             <h2>How to play:</h2>
-            <p>Go through the settings and pick what you want. Note that:</p>
+            <p>Go through the settings and pick what you want.</p>
             <ul>
-                <li>Leaving questions blank makes the game loop forever</li>
+                <li>Leaving questions blank is very inconsistent.</li>
+                <li>You can turn on showing correct answers and negative scoes. By default they're off.</li>
+                <li>You can only select one category at once right now, but you can use "all categories" to play with all of them</li>
             </ul>
 
             <p>Click start, then try to pick the correct answer!</p>

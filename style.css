@@ -3,7 +3,7 @@
     --fg:            #fff5e0;
     --color1:        #c65b43;
     --color2:        #8fbf55;
-    --color3:        #486fc4;
+    --color3:        #6a90e0;
     --mid-light:     #cbbda1;
     --mid-dark:      #908262;
 }
@@ -69,6 +69,7 @@ input {
     background-color: var(--mid-dark);
     color: var(--fg);
     accent-color: var(--bg);
+    border: solid 1.5px var(--bg);
     appearance: none;
 }
 
@@ -99,6 +100,55 @@ input[type="checkbox"]:disabled {
   border-color: black;
   background: #dddddd;
   color: gray;
+}
+
+select {
+    flex: 1;
+}
+select {
+    background: var(--mid-dark);
+    border: solid 1.5px var(--bg);
+    color: var(--fg);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    transition: 0.4s;
+    font-family: inherit;
+}
+select:hover,
+select:focus {
+    background: var(--mid-dark);
+}
+option {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    border: 5px double var(--fg);
+    background: var(--mid-dark);
+    color: var(--fg);
+    padding: 10px;
+    transition: 0.4s;
+}
+option:not(option:last-of-type) {
+    border-bottom: none;
+}
+option:nth-of-type(odd) {
+    background: var(--mid-light);
+}
+
+option:hover,
+option:focus {
+    background: plum;
+}
+option .icon {
+    font-size: 1.6rem;
+    text-box: trim-both cap alphabetic;
+}
+option:checked {
+    font-weight: bold;
+    background: var(--color3);
+}
+option:active {
+    background: var(--color2);
 }
 
 

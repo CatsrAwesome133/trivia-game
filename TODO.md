@@ -18,5 +18,5 @@
 - ~~resize play menu properly for screens~~
 - nicer ending screen
 - make settings look better i beg
-- style dropdown
+- ~~style dropdown~~
 - detect and use dark mode
