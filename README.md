@@ -1,6 +1,8 @@
 # trivia-game
 An online trivia game that uses questions from Open Trivia DB
 
+![Image of the game](https://f2.toyhou.se/file/f2-toyhou-se/images/130522033_psfXRqd49BKxqDs.png)
+
 This was made to familiarize myself with Javascript and API usage. 
 
 ...also I haven't found many other dedicated trivia games
