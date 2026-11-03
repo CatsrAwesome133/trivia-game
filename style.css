@@ -48,6 +48,8 @@ button {
     border-color: var(--bg);
     padding: 5px;
     width: 20vw;
+    font-family: inherit;
+    font-size: inherit;
     transition: transform 0.1s ease-out, background-color 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out; 
 }
 button:hover {
@@ -68,6 +70,7 @@ ul {
 
 input {
     font-family: inherit;
+    font-size: inherit;
     background-color: var(--mid-dark);
     color: var(--fg);
     accent-color: var(--bg);
