@@ -3,13 +3,15 @@
 - ~~score system~~
 - ~~add question numbers~~
     - ~~try to load all questions at once~~
-- add question type filters
+- ~~add question type filters~~
     - ~~category~~
-    - difficulty
-    - choice/true or false
+    - ~~difficulty~~
+    - ~~choice/true or false~~
 - ~~randomize answer location~~
 - ~~show correct answer (setting)~~
 - ~~display unicode properly~~
+- add fill-in-the-blank mode
+- add default value of 10 to questions
 
 ## Styling
 - animations *WIP*
