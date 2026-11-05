@@ -11,7 +11,7 @@
 - ~~show correct answer (setting)~~
 - ~~display unicode properly~~
 - add fill-in-the-blank mode
-- add default value of 10 to questions
+- ~~add default value of 10 to questions~~
 
 ## Styling
 - animations *WIP*
