@@ -24,6 +24,22 @@ function waitForPageClick() {
   });
 }
 
+function fadeIn(e) {
+    const element = document.getElementById(e);
+
+    element.classList.remove("hidden");
+    setTimeout(() => {
+        element.classList.add("fade-in");
+    }, 10); 
+}
+
+function fadeReset(e) {
+    const element = document.getElementById(e);
+
+    element.classList.remove("fade-in");
+    element.classList.add("hidden");
+}
+
 
 async function loadQuestions() {
     // Request and parse JSON
@@ -34,6 +50,9 @@ async function loadQuestions() {
         }
         
         const data = await response.json();
+
+        // Log the response code, for debugging 
+        console.log(data.response_code)
         
         // Save the array of results to our global state variable
         questions = data.results; 
@@ -136,7 +155,7 @@ function wrongAns(element) {
 // For every answer chosen
 function choseAnswer() {
     const options = document.getElementById('container-ans').querySelectorAll("*");
-    document.getElementById('next').setAttribute("style", "");
+    fadeIn('next');
 
     options.forEach(i => {
         i.setAttribute("onclick", "")
@@ -148,7 +167,7 @@ function choseAnswer() {
 // Displaying correct answer
 function displayAns() {
     if (waiting == true) {
-        document.getElementById('next').setAttribute("style", "display: none");
+        fadeReset('next');
         currentIndex++;
         waiting = false;
         newQuestion();

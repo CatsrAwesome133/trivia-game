@@ -227,6 +227,27 @@ option:active {
     transform: translateX(-50%);
 }
 
+#nav {
+    position: fixed;
+}
+#nav a {
+    text-decoration: none;
+}
+
+
+.fade-box {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in {
+  opacity: 1;
+  display: block;
+}
 
 .bar-bottom {
     margin-top: 10px;
