@@ -10,7 +10,7 @@ async function loadCategories() {
         }
         
         const data = await response.json();
-        const categories = data.trivia_categories;
+        categories = data.trivia_categories;
 
         const selector = document.getElementById('category');
     
@@ -29,16 +29,3 @@ async function loadCategories() {
 
 
 loadCategories();
-
-// On page load
-document.addEventListener("DOMContentLoaded", () => {
-    const selector = document.getElementById('category');
-    
-    // Fetch and place categories
-    categories.forEach(c => {
-        const newOpt = document.createElement('option');
-        newOpt.innerHTML = c.name;
-        newOpt.setAttribute("value", c.name);
-        selector.appendChild(newOpt);
-    });
-});

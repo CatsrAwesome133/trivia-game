@@ -43,6 +43,7 @@ function fadeReset(e) {
 
 async function loadQuestions() {
     // Request and parse JSON
+    console.log(trivia_api);
     try {
         const response = await fetch(trivia_api);
         if (!response.ok) {
@@ -204,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Question difficulty: ", diff);
     console.log("Question type: ", type);
 
-    trivia_api = `https://opentdb.com/api.php?amount=${Number.parseInt(questionNo)}&category=${Number.parseInt(category)}&difficulty=${diff}&type=${type}`;
+    trivia_api = `https://opentdb.com/api.php?amount=${Number.parseInt(questionNo)}&category=${category}&difficulty=${diff}&type=${type}`;
 
     loadQuestions();
 });
