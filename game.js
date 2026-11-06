@@ -53,7 +53,27 @@ async function loadQuestions() {
         const data = await response.json();
 
         // Log the response code, for debugging 
-        console.log(data.response_code)
+        rCode = data.response_code;
+        box = document.getElementById('container-q');
+        switch (rCode) {
+        case 1:
+            box.innerHTML = 'Error: No Results. Try reducing your question count.';
+            return;
+        case 2:
+            box.innerHTML = 'Error: Invalid Parameter. You might have invalid options in your settings.';
+            return;
+        case 3:
+            box.innerHTML = 'Error: Token Not Found. Report this and/or reset your session.';
+            return;
+        case 4:
+            box.innerHTML = "Error: Token Empty. You've gone through all the questions! Please reset your session.";
+            return;
+        case 5:
+            box.innerHTML = 'Error: Rate Limit. Try coming back after a while.';
+            return;
+        }
+        console.log(rCode);
+
         
         // Save the array of results to our global state variable
         questions = data.results; 
@@ -63,6 +83,7 @@ async function loadQuestions() {
 
     } catch (error) {
         console.error("Failed to load questions:", error);
+        document.getElementById('container-q').innerHTML = `<p>${error}</p>`;
     }
 }
 
