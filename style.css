@@ -140,13 +140,11 @@ option:nth-of-type(odd) {
     background: var(--mid-light);
 }
 
-option:hover,
-option:focus {
-    background: plum;
+option:hover {
+    background: rgb(255, 0, 255);
 }
-option .icon {
-    font-size: 1.6rem;
-    text-box: trim-both cap alphabetic;
+option:focus {
+    background: rgb(255, 0, 255);
 }
 option:checked {
     font-weight: bold;
@@ -268,4 +266,12 @@ option:active {
 
 .text-block ul {
     margin-left: 15px;
+}
+
+
+/* Mobile/vertical-only styling */
+@media (max-aspect-ratio: 1/1) {
+  #container-end {
+    width: 100%;
+}
 }
