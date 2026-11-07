@@ -55,6 +55,7 @@ async function loadQuestions() {
         // Log the response code, for debugging 
         rCode = data.response_code;
         box = document.getElementById('container-q');
+        box.setAttribute("style", "color: var(--mid-light); border-color: var(--bg)");
         switch (rCode) {
         case 1:
             box.innerHTML = 'Error: No Results. Try reducing your question count.';
@@ -71,6 +72,8 @@ async function loadQuestions() {
         case 5:
             box.innerHTML = 'Error: Rate Limit. Try coming back after a while.';
             return;
+        default:
+            box.setAttribute('style', '');
         }
         console.log(rCode);
 
@@ -84,6 +87,7 @@ async function loadQuestions() {
     } catch (error) {
         console.error("Failed to load questions:", error);
         document.getElementById('container-q').innerHTML = `<p>${error}</p>`;
+        document.getElementById('container-q').setAttribute("style", "color: var(--mid-light); border-color: var(--bg)");
     }
 }
 
@@ -176,7 +180,12 @@ function wrongAns(element) {
 
 // For every answer chosen
 function choseAnswer() {
-    const options = document.getElementById('container-ans').querySelectorAll("*");
+    const container = document.getElementById('container-ans');
+    const options = container.querySelectorAll("*");
+
+    container.classList.add('ans-inactive');
+    container.classList.remove('ans-active');
+
     fadeIn('next');
 
     options.forEach(i => {
@@ -186,10 +195,13 @@ function choseAnswer() {
     waiting = true;
 }
 
-// Displaying correct answer
+// Moving to next question
 function displayAns() {
     if (waiting == true) {
         fadeReset('next');
+        document.getElementById('container-ans').classList.remove('ans-inactive');
+        document.getElementById('container-ans').classList.add('ans-active');
+
         currentIndex++;
         waiting = false;
         newQuestion();
