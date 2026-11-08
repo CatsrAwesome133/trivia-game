@@ -23,3 +23,4 @@
 - ~~style dropdown~~
 - detect and use dark mode
 - fix mobile formatting *WIP*
+- add font

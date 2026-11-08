@@ -283,7 +283,64 @@ option:active {
 
 /* Mobile/vertical-only styling */
 @media (max-aspect-ratio: 1/1) {
-  #container-end {
-    width: 100%;
+    #container-end {
+        width: 100%;
+    }
 }
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+    --bg:            #cbbda1;
+    --fg:            #605540;
+    --color1:        #e1745c;
+    --color2:        #8fbf55;
+    --color3:        #5c83d5;
+    --mid-light:     #908262;
+    --mid-dark:      #483f2d;
+    --extra:         #ac9f80;
+    --white:         #fff5e0;
+    }
+    #container-ans div {
+        background-color: var(--extra);
+    }
+    .ans-active div:hover {
+        background-color: var(--bg) !important;
+    }
+    .ans-inactive div:hover {
+        background-color: var(--extra);
+    }
+    a {
+        color: var(--extra);
+    }
+    button:hover {
+        background-color: var(--mid-dark);
+        border-color: var(--extra);
+        transform: scale(0.98, 1.05);
+        transition: transform 0.1s ease-out, background-color 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out; 
+    }
+    
+    input {
+        color: var(--bg);
+        border-color: var(--extra);
+        accent-color: var(--fg);
+    }
+    input[type="checkbox"] {
+        color: var(--bg);
+        border-color: var(--extra);
+    }
+    select {
+        color: var(--bg);
+        border-color: var(--extra);
+    }
+    option {
+        color: var(--bg);
+    }
+    option:nth-of-type(odd) {
+        background: var(--fg);
+    }
+    option:checked {
+        color: var(--white);
+        background: var(--color3);
+    }
 }
