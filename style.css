@@ -14,13 +14,13 @@ body {
     color: var(--bg);
     background-color: var(--fg);
     margin: 15px;
-    font-family: "Times New Roman", times, serif;
+    font-family: "Another Typewriter", "Times New Roman", times, serif;
     font-size: 12pt;
 }
 
 
 h1 {
-    font-family: "Times New Roman", times, serif;
+    font-family: "Another Typewriter", "Times New Roman", times, serif;
     border: double 5px;
     border-color: var(--bg);
     border-left: solid 5px;
@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    font-family: "Times New Roman", times, serif;
+    font-family: "Another Typewriter", "Times New Roman", times, serif;
     border: double 5px;
     border-color: var(--bg);
     border-left: solid 5px;
