@@ -8,19 +8,27 @@
     --mid-dark:      #908262;
 }
 
+@font-face {
+  font-family: 'ATW';
+  src: url('./atwriter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 
 body {
     color: var(--bg);
     background-color: var(--fg);
     margin: 15px;
-    font-family: "Another Typewriter", "Times New Roman", times, serif;
+    font-family: "ATW", "Times New Roman", times, serif;
     font-size: 12pt;
 }
 
 
 h1 {
-    font-family: "Another Typewriter", "Times New Roman", times, serif;
+    font-family: "ATW", "Times New Roman", times, serif;
     border: double 5px;
     border-color: var(--bg);
     border-left: solid 5px;
